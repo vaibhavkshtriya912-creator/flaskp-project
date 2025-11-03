@@ -20,3 +20,27 @@ Deploy both frontend and backend on a single EC2 instance so the frontend can co
   ```bash
   cd backend
   python3 app.py
+
+
+---
+
+## 🌐 Deployment Details
+- **Frontend URL:** http://13.201.81.207:3000/
+- **Backend (Internal):** http://localhost:5000
+- **Repository:** [https://github.com/vaibhavkshtriya912-creator/flaskp-project](https://github.com/vaibhavkshtriya912-creator/flaskp-project)
+
+---
+
+## 🧩 Level 1 Completed
+✅ Flask + Express deployed on a single EC2 instance  
+✅ Backend accessible internally through localhost  
+✅ Only port 3000 open publicly  
+✅ App successfully tested and code pushed to GitHub  
+
+---
+
+## 💰 Cost Control
+To save free-tier usage when not testing:
+```bash
+pkill -f server.js || true
+pkill -f app.py || true
