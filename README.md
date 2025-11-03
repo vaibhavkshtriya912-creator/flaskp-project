@@ -31,7 +31,6 @@ Deploy both frontend and backend on a single EC2 instance so the frontend can co
 
 ---
 
-## 🧩 Level 1 Completed
 ✅ Flask + Express deployed on a single EC2 instance  
 ✅ Backend accessible internally through localhost  
 ✅ Only port 3000 open publicly  
