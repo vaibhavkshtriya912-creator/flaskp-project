@@ -56,7 +56,7 @@ The frontend connects to the backend using its **private IP**.
   - Frontend → Backend via `http://localhost:5000`
 
 **URL**
--http://65.1.166.213:3000
+- http://43.205.217.186:3000/
 
 ✅ Containers run serverlessly on AWS Fargate  
 ✅ Images from ECR  
