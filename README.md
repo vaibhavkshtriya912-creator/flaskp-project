@@ -41,6 +41,28 @@ The frontend connects to the backend using its **private IP**.
 
 ---
 
+# 🐳 Level 3 – Docker + ECR + ECS (Fargate) in VPC
+
+**Images (ECR)**
+- 147989073616.dkr.ecr.ap-south-1.amazonaws.com/flask-backend:latest
+- 147989073616.dkr.ecr.ap-south-1.amazonaws.com/express-frontend:latest
+
+**ECS (Fargate)**
+- Cluster: `flask-express-cluster` (default VPC, public subnets)
+- Task definition: `flask-express-task`
+  - Containers in one task:
+    - express-frontend → port 3000 (public)
+    - flask-backend → port 5000 (internal)
+  - Frontend → Backend via `http://localhost:5000`
+
+**URL**
+-http://65.1.166.213:3000
+
+✅ Containers run serverlessly on AWS Fargate  
+✅ Images from ECR  
+✅ No EC2 management, clean VPC networking
+
+
 ## 💰 Cost Control
 Stop both instances after testing to save Free Tier usage:
 ```bash
