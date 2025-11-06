@@ -68,3 +68,26 @@ Stop both instances after testing to save Free Tier usage:
 ```bash
 pkill -f server.js || true
 pkill -f app.py || true
+
+```
+## ☸️ Level 4 – Kubernetes (Minikube) Deployment
+
+### 🎯 Objective
+Deploy the same Flask backend and Express frontend on a local Kubernetes cluster using **Minikube**.
+
+### ⚙️ Setup
+| Component | Type | Port | Namespace |
+|------------|------|------|------------|
+| Flask Backend | Deployment + Service (ClusterIP) | 5000 | flask-express |
+| Express Frontend | Deployment + Service (NodePort) | 3000 → 30080 | flask-express |
+
+### 🧱 Commands
+```bash
+kubectl apply -f k8s/namespace.yaml
+kubectl apply -f k8s/flask-deployment.yaml
+kubectl apply -f k8s/express-deployment.yaml
+
+kubectl get pods -n flask-express
+kubectl get svc -n flask-express
+minikube service express-svc -n flask-express --url
+
